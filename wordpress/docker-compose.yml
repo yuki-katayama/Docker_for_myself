@@ -1,0 +1,30 @@
+version: '3.4'
+ 
+services:
+  wordpress:
+    image: wordpress
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_PASSWORD: samplewp
+    deploy:
+      replicas: 2
+      placement:
+        constraints:
+          - node.roll == worker
+    depends_on:
+      - mysql
+ 
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: samplewp
+    volumes:
+      - mysql_vol:/var/lib/mysql
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.hostname == manager2
+volumes:
+  mysql_vol:
