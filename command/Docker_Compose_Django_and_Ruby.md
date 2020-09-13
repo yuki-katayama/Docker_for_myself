@@ -78,7 +78,7 @@ docker-compose run web python3 manage.py startapp <app名>
 
 ## Ruby on Rails の環境を構築する
 + 参考 : https://docs.docker.com/compose/rails/
-+ 完成版 :
++ 完成版 :　https://github.com/yuki-katayama/Docker_for_myself/tree/master/ruby1
 
 Dockerfile
 ```
