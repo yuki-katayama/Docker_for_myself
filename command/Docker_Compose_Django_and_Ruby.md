@@ -159,6 +159,7 @@ docker-compose build --no-cache
 ### データベース作成
 ```
 docker-compose run web rake db:create
+docker-compose run web rake db:migrate
 ```
 ### Scaffoldにて簡易的なアプリケーション作成(ユーザー名を管理する)
 ```
